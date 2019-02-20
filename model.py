@@ -1,3 +1,14 @@
+"""Train Script
+
+Dataset Details:
+Datset in .csv format
+It contains 4 columns
+1.Left Side Image
+2.Center Side Image 
+3.Right Side Image.All images are labelled with direction.Can find all image frames inside IMG folder
+4.Store 4 values such as Steering angle,Speed,Trottle,Break"""
+
+
 import pandas as pd # data analysis toolkit - create, read, update, delete datasets
 import numpy as np #matrix math
 from sklearn.model_selection import train_test_split #to split out training and testing data 
