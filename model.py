@@ -121,6 +121,7 @@ def train_model(model, args, X_train, X_valid, y_train, y_valid):
     #For instance, this allows you to do real-time data augmentation on images on CPU in 
     #parallel to training your model on GPU.
     #so we reshape our data into their appropriate batches and train our model simulatenously
+
     model.fit_generator(batch_generator(args.data_dir, X_train, y_train, args.batch_size, True),
                         args.samples_per_epoch,
                         args.nb_epoch,
@@ -129,6 +130,10 @@ def train_model(model, args, X_train, X_valid, y_train, y_valid):
                         nb_val_samples=len(X_valid),
                         callbacks=[checkpoint],
                         verbose=1)
+
+    # def batch_generator(X_train, y_train):
+    #     while true: 
+    #         yield(X_train.next(), y_train.next())
 
 #for command line args
 def s2b(s):
